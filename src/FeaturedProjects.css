@@ -1,0 +1,153 @@
+:root {
+  --primary-color: #8e44ad;
+  --primary-light: #a36bd3;
+  --text-light: #ffffff;
+  --text-muted: #b0b0b0;
+  --bg-dark: #121212;
+  --font: 'Poppins', sans-serif;
+}
+
+.featured-projects-section {
+  padding: 0rem 2rem;
+  background: var(--bg-dark);
+  font-family: var(--font);
+  text-align: center;
+}
+
+.projects-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--primary-light);
+}
+
+.projects-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 750px;
+  margin: 0 auto 3rem;
+  line-height: 1.6;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* 🧊 Project Card */
+.project-card {
+  overflow: hidden;
+  border-radius: 20px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1.5px solid white !important;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px rgba(142, 68, 173, 0.25);
+}
+
+/* 🖼️ Logo */
+.project-logo-container {
+  background: rgba(255, 255, 255, 0.03);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.project-logo {
+  max-width: 150px;
+  max-height: 80px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+/* 📝 Content */
+.project-content {
+  padding: 1.8rem;
+}
+
+.project-content h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.8rem;
+}
+
+.project-content p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+/* 🏷️ Tags */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* 🔗 Button */
+.btn.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn.btn-primary:hover {
+  background: #fff;
+  color: var(--primary-color);
+}
+
+/* 👇 View More */
+.view-more-container {
+  margin-top: 3rem;
+}
+
+.view-more-link {
+  color: var(--primary-light);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-more-link:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .projects-title {
+    font-size: 2.2rem;
+  }
+
+  .project-content h3 {
+    font-size: 1.4rem;
+  }
+}

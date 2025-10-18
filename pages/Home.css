@@ -1,0 +1,35 @@
+/* src/pages/Home/Home.css */
+.home-page {
+  /* The header is fixed, so we need padding at the top */
+  padding-top: 80px; 
+}
+
+.contact-home-section {
+  text-align: center;
+  background: linear-gradient(145deg, var(--primary-color), var(--secondary-color));
+  border-radius: 16px;
+  padding: 4rem 2rem;
+  margin-bottom: 4rem;
+}
+
+.contact-home-section h2 {
+  color: #fff;
+  font-size: 3rem;
+}
+
+.contact-home-section p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.contact-home-section .btn-large {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: var(--primary-color);
+}
+
+.contact-home-section .btn-large:hover {
+  background: #eee;
+}

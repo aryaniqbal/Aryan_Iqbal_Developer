@@ -1,0 +1,267 @@
+/* === CONTACT SECTION === */
+.contact-section {
+  background-color: var(--bg-dark);
+  font-family: var(--font);
+  color: var(--text-light);
+  padding: 6rem 0;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+/* === Section Titles (Consistent with other sections) === */
+.section-pretitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: var(--text-light);
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* === Container === */
+.contact-container {
+  display: flex;
+  max-width: 1200px;
+  width: 90%;
+  margin: 0 auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* === Left Side: Contact Info === */
+.contact-info {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+}
+
+.contact-info h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.contact-intro {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+}
+
+.contact-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.contact-icon-bg {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 1px solid white !important;
+  
+  /* Frosted glass icon background */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--primary-light);
+  transition: all 0.3s ease;
+}
+
+.contact-info-list li:hover .contact-icon-bg {
+  background: var(--primary-color);
+  color: var(--text-light);
+  transform: scale(1.1);
+}
+
+.contact-info-text h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-light);
+  margin: 0 0 0.25rem 0;
+}
+
+.contact-info-text p,
+.contact-info-text a {
+  font-size: 1rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info-text a:hover {
+  color: var(--primary-light);
+}
+
+.social-links {
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.social-links a {
+  font-size: 1.8rem;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: var(--primary-light);
+  transform: translateY(-5px);
+}
+
+/* === Right Side: Contact Form === */
+.contact-form {
+  flex: 1.5; /* Give form more space */
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.contact-form .row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  font-family: var(--font);
+  border: 1px solid white !important;
+  border-radius: 12px;
+
+  /* Frosted Glass Inputs */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-light);
+  
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  margin-bottom: 1rem; /* Added margin for spacing */
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--primary-light);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px rgba(142, 68, 173, 0.2);
+}
+
+.contact-form .send-btn {
+  margin-top: 1rem;
+  padding: 14px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(142, 68, 173, 0.4);
+}
+
+.contact-form .send-btn:hover {
+  background: var(--primary-light);
+  box-shadow: 0 6px 20px rgba(142, 68, 173, 0.6);
+  transform: translateY(-3px);
+}
+
+/* --- Disabled Button Style --- */
+.contact-form .send-btn:disabled {
+  background: var(--text-muted);
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* --- Form Status Messages --- */
+.form-status {
+  width: 100%;
+  padding: 12px;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+}
+
+.form-status.success {
+  background-color: #28a745; /* Green */
+  color: white;
+}
+
+.form-status.error {
+  background-color: #dc3545; /* Red */
+  color: white;
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 4rem;
+  }
+  
+  .contact-info {
+    max-width: 100%;
+  }
+  
+  .contact-form {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form .row {
+    flex-direction: column;
+    gap: 0; /* Let inputs handle the gap */
+    margin-bottom: 0;
+  }
+  
+  /* This rule ensures all inputs AND textareas have correct spacing on mobile */
+  .contact-form input,
+  .contact-form textarea {
+      margin-bottom: 1rem;
+  }
+}

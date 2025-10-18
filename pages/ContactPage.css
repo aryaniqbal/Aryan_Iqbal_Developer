@@ -1,0 +1,169 @@
+/* === Contact Page Base === */
+.contact-page {
+    padding: 129px 7.5rem 4rem;
+  background: linear-gradient(180deg, #000 0%, #111 100%);
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.page-title {
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.page-title .highlight {
+  color: #8e44ad;
+}
+
+.page-subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 1.1rem;
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Layout === */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+}
+
+.frosted-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+}
+
+.frosted-card:hover {
+  border-color: #8e44ad;
+  transform: translateY(-5px);
+}
+
+/* === Left Contact Info === */
+.contact-info h3 {
+  font-size: 1.8rem;
+  color: #8e44ad;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  font-size: 1.05rem;
+  color: #ccc;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-info li {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.contact-info .icon {
+  color: #8e44ad;
+  font-size: 1.2rem;
+}
+
+/* === Form Styles === */
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #ddd;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #8e44ad;
+  box-shadow: 0 0 8px #8e44ad;
+  outline: none;
+}
+
+/* === Submit Button === */
+.btn-submit {
+  width: 100%;
+  background: #8e44ad;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+  background: #fff;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .contact-info,
+  .contact-form-wrapper {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+  }
+
+  .frosted-card {
+    padding: 1.5rem;
+  }
+
+  .btn-submit {
+    font-size: 1rem;
+    padding: 0.9rem;
+  }
+}

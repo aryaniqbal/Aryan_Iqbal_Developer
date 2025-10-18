@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #ff6b00;
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --hover-color: #000000;
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* === Header === */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 0;
+  background: var(--bg-color);
+  border-bottom: 1px solid #e6e6e6;
+  z-index: 1000;
+  transition: all var(--transition);
+}
+
+.header-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* === Logo === */
+.logo img {
+  width: 45px;
+  height: 45px;
+  display: block;
+  cursor: pointer;
+  transition: transform var(--transition);
+}
+
+.logo img:hover {
+  transform: scale(1.1);
+}
+
+/* === Navigation === */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav ul li a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color var(--transition);
+}
+
+.nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition);
+}
+
+.nav ul li a:hover {
+  color: var(--primary-color);
+}
+
+.nav ul li a:hover::after {
+  width: 100%;
+}
+
+/* === Hire Me Button === */
+.hire-btn {
+  background: var(--primary-color);
+  padding: 0.6rem 1.4rem;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+
+.hire-btn:hover {
+  background: var(--hover-color);
+  transform: translateY(-2px);
+  color: #fff;
+}
+
+.hire-btn:active {
+  background: #333;
+  transform: scale(0.97);
+}
+
+/* === Hamburger === */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* === ✅ Responsive (Mobile View) === */
+@media (max-width: 850px) {
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 75%;
+    height: 100vh;
+    background: var(--bg-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s ease;
+  }
+
+  .nav.active {
+            right: -22px;
+        top: -160px;
+
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .nav ul li a {
+    font-size: 1.2rem;
+  }
+
+  .hire-btn {
+    font-size: 1rem;
+    padding: 0.7rem 2rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* prevent scroll when menu open */
+  body.menu-open {
+    overflow: hidden;
+  }
+}
+
+/* === Extra Small Devices (Below 480px) === */
+@media (max-width: 480px) {
+  .nav {
+    width: 85%;
+  }
+
+  .nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .hire-btn {
+    font-size: 0.95rem;
+    padding: 0.6rem 1.8rem;
+  }
+
+  .header-container {
+    padding: 0 1rem;
+  }
+}

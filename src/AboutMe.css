@@ -1,0 +1,139 @@
+:root {
+  --primary-color: #8e44ad;
+  --primary-light: #a36bd3;
+  --secondary-color: #3498db;
+  --bg-dark: #121212;
+  --text-light: #ffffff;
+  --text-muted: #b7b7b7;
+  --font: 'Poppins', sans-serif;
+}
+
+/* === Section Base === */
+.about-section {
+  padding: 6rem 5rem;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font);
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  align-items: center;
+  gap: 4rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Image === */
+.about-image-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-image-ring {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color), var(--secondary-color), var(--primary-color));
+  animation: spin 6s linear infinite;
+  filter: blur(5px);
+  opacity: 0.8;
+}
+
+.about-profile-img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--bg-dark);
+  position: relative;
+  z-index: 2;
+  transition: transform 0.4s ease;
+}
+
+.about-image-container:hover .about-profile-img {
+  transform: scale(1.05);
+}
+
+.about-image-container:hover .about-image-ring {
+  opacity: 1;
+}
+
+/* === Text === */
+.about-text h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.highlight {
+  color: var(--primary-light);
+}
+
+.about-text h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+}
+
+.about-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background: #fff;
+  color: var(--primary-color);
+  transform: translateY(-3px);
+}
+
+/* === Animation === */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .about-text h2 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-profile-img {
+    width: 230px;
+    height: 230px;
+  }
+  .about-image-ring {
+    width: 250px;
+    height: 250px;
+  }
+  .about-text h2 {
+    font-size: 2rem;
+  }
+}

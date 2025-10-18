@@ -1,0 +1,358 @@
+:root {
+  --primary-color: #8e44ad;
+  --primary-light: #a36bd3;
+  --secondary-color: #3498db;
+  --bg-dark: #121212;
+  --text-light: #ffffff;
+  --text-muted: #b7b7b7;
+  --font: 'Poppins', sans-serif;
+}
+
+/* 🔸 HERO SECTION */
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  font-family: var(--font);
+  overflow: hidden;
+  position: relative;
+  padding: 4rem 0;
+}
+
+/* 🔸 BACKGROUND BLOBS */
+.hero-blob-1,
+.hero-blob-2 {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.3;
+  z-index: 0;
+}
+
+.hero-blob-1 {
+  width: 450px;
+  height: 450px;
+  background: var(--primary-color);
+  top: -10%;
+  left: -5%;
+  animation: blob1 15s infinite alternate ease-in-out;
+}
+
+.hero-blob-2 {
+  width: 400px;
+  height: 400px;
+  background: var(--secondary-color);
+  bottom: -10%;
+  right: -5%;
+  animation: blob2 12s infinite alternate ease-in-out;
+}
+
+/* 🔸 CONTENT */
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  gap: 3rem;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+}
+
+/* 🔸 TEXT */
+.hero-text {
+  flex: 1;
+  max-width: 600px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards 0.3s;
+}
+
+.hero-text h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--primary-light);
+}
+
+.type-animation {
+  color: var(--primary-light);
+  font-weight: 700;
+  font-size: 31px;
+}
+
+.hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-muted);
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+/* 🔸 BUTTONS */
+.hero-buttons .btn {
+  padding: 12px 24px;
+border: 1px solid white;
+border-radius: 50px;
+
+  font-weight: 600;
+  text-decoration: none;
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+
+.btn-primary {
+  background: var(--primary-color);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(142, 68, 173, 0.4);
+}
+
+.btn-primary:hover {
+color: var(--primary-color);
+background: white !important;
+
+ 
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 2px solid var(--text-light);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+color: white;
+}
+
+/* 🔸 IMAGE */
+.hero-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  animation: fadeIn 1s ease forwards 0.6s;
+  opacity: 0;
+}
+
+.hero-image-ring {
+  position: absolute;
+  width: 380px;
+  height: 270px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary-color), var(--secondary-color), var(--primary-color));
+  animation: spin 6s linear infinite;
+  filter: blur(6px);
+  opacity: 0.8;
+}
+
+.profile-img {
+  width: 344px;
+  height: 345px;
+  border-radius: 50%;
+  object-fit: cover;
+  position: relative;
+  z-index: 2;
+  border: 4px solid var(--bg-dark);
+  transition: transform 0.4s ease;
+}
+
+.hero-image-container:hover .profile-img {
+  transform: scale(1.05);
+}
+
+.hero-image-container:hover .hero-image-ring {
+  opacity: 1;
+}
+
+/* 🔸 ANIMATIONS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blob1 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(80px, 60px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes blob2 {
+  0% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-80px, -60px) scale(1.1); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+.container {
+    max-width: 1440px !important;
+}
+
+/* 🔸 RESPONSIVE */
+@media (max-width: 992px) {
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .hero-buttons {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .hero-buttons .btn {
+    margin: 0.5rem;
+  }
+}
+
+/* 🔸 Responsive for 480px screens */
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 3rem 1.2rem;
+  }
+
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.9rem;
+  }
+
+  .type-animation {
+    font-size: 1.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .hero-image-ring {
+    width: 220px;
+    height: 220px;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.85rem;
+    padding: 10px 18px;
+  }
+}
+
+/* 🔸 Responsive for 394px screens */
+@media (max-width: 394px) {
+  .hero-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.7rem;
+  }
+
+  .type-animation {
+    font-size: 1.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .hero-image-ring {
+    width: 190px;
+    height: 190px;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.8rem;
+    padding: 9px 16px;
+  }
+
+  .hero-blob-1,
+  .hero-blob-2 {
+    width: 300px;
+    height: 300px;
+    filter: blur(80px);
+  }
+}
+
+/* 🔸 Responsive for 345px screens */
+@media (max-width: 345px) {
+  .hero-section {
+    padding: 2rem 0.8rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .type-animation {
+    font-size: 1.1rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1.3rem;
+  }
+
+  .profile-img {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-image-ring {
+    width: 170px;
+    height: 170px;
+  }
+
+  .hero-buttons {
+    gap: 0.4rem;
+  }
+
+  .hero-buttons .btn {
+    font-size: 0.75rem;
+    padding: 8px 14px;
+  }
+
+  .hero-blob-1,
+  .hero-blob-2 {
+    width: 250px;
+    height: 250px;
+    filter: blur(70px);
+  }
+}
